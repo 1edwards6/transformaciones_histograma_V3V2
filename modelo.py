@@ -309,8 +309,8 @@ def procesar_imagen_rgb(
     if color_original.ndim != 3 or color_original.shape[2] != 3:
         raise ValueError("La imagen de entrada debe estar en formato RGB.")
     imagen = np.asarray(Image.fromarray(color_original).convert("L"), dtype=np.uint8)
-    filas_grid = 32
-    columnas_grid = 32
+    filas_grid = 2
+    columnas_grid = 1
 
     # V3 GLOBAL: misma lógica de objetivo y reasignación aplicada a toda la imagen.
     histograma_global = np.bincount(imagen.ravel(), minlength=256).astype(np.int64)
